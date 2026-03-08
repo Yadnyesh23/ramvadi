@@ -1,5 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import img1 from "../assets/temple.png";
 
 export default function About() {
@@ -171,14 +171,21 @@ export default function About() {
               </a>
             </div>
           </div>
-          <div className="lg:w-3/5 h-[450px]">
+          <div className="lg:w-3/5 h-112.5">
+            
+
             <iframe
-              title="Ramwadi Location"
-              src="https://www.google.com/maps/place/Ramwadi/@18.52326,73.304055,1679m/data=!3m1!1e3!4m6!3m5!1s0x3be8197b5c94aabd:0xab4f9a0b4782d1e2!8m2!3d18.5232604!4d73.3040552!16s%2Fg%2F11fn53x0zh?hl=en&entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D2"
-              className="w-full h-full border-0 grayscale-[10%] hover:grayscale-0 transition-all"
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.5323782161554!2d73.30148027523684!3d18.523260382570747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be8197b5c94aabd%3A0xab4f9a0b4782d1e2!2sRamwadi!5e1!3m2!1sen!2sin!4v1771752454607!5m2!1sen!2sin"
+  width="100%"
+  height="350"
+  className="w-full h-full border-0 grayscale-[10%] hover:grayscale-0 transition-all"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  
+/>
+            
           </div>
         </div>
       </div>
