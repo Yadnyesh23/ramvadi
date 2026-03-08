@@ -1,5 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
-// import { motion } from "framer-motion";
+import { motion as _motion } from "framer-motion";
 import img1 from "../assets/temple.png";
 
 export default function About() {
@@ -15,13 +15,13 @@ export default function About() {
         
         {/* Section Header */}
         <div className="text-center mb-20">
-          <motion.span 
+          <_motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-orange-600 font-bold tracking-[0.2em] uppercase text-sm"
           >
             {t("75 Years of Legacy", "७५ वर्षांचा वारसा")}
-          </motion.span>
+          </_motion.span>
           <h1 className="text-[#D32F2F] font-serif font-bold text-5xl md:text-7xl mb-4 mt-2 drop-shadow-sm">
             {t("About Us", "आमच्याबद्दल")}
           </h1>
@@ -34,7 +34,7 @@ export default function About() {
 
         {/* 1. Founders & History Section */}
         <div className="flex flex-col lg:flex-row items-center gap-16 mb-24">
-          <motion.div 
+          <_motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             className="w-full lg:w-1/2 relative"
@@ -49,7 +49,7 @@ export default function About() {
               />
               <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#D32F2F]"></div>
             </div>
-          </motion.div>
+          </_motion.div>
 
           <div className="w-full lg:w-1/2">
             <h2 className="text-3xl font-serif font-bold text-[#D32F2F] mb-6 border-b-2 border-yellow-500 pb-2 w-fit">
@@ -106,7 +106,7 @@ export default function About() {
         {/* 3. Festivals & Service Section */}
         <div className="grid lg:grid-cols-2 gap-12 mb-24">
           {/* Festivals */}
-          <motion.div 
+          <_motion.div 
             whileHover={{ scale: 1.02 }}
             className="bg-white rounded-3xl p-8 shadow-xl border border-orange-100"
           >
@@ -121,10 +121,10 @@ export default function About() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </_motion.div>
 
           {/* Social Service */}
-          <motion.div 
+          <_motion.div 
             whileHover={{ scale: 1.02 }}
             className="bg-white rounded-3xl p-8 shadow-xl border border-red-100"
           >
@@ -140,7 +140,7 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </_motion.div>
         </div>
 
         {/* 4. Map & Directions */}
@@ -195,7 +195,7 @@ export default function About() {
 
 function ColoredCard({ title, children, color, icon }) {
   return (
-    <motion.div 
+    <_motion.div 
       whileHover={{ y: -10 }}
       className={`${color} p-8 rounded-2xl shadow-xl text-white relative overflow-hidden group`}
     >
@@ -205,7 +205,7 @@ function ColoredCard({ title, children, color, icon }) {
       <div className="text-3xl mb-4">{icon}</div>
       <h3 className="text-xl font-bold mb-3">{title}</h3>
       <p className="opacity-90 leading-relaxed text-sm font-medium">{children}</p>
-    </motion.div>
+    </_motion.div>
   );
 }
 
