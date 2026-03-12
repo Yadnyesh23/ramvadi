@@ -163,7 +163,7 @@ export default function About() {
                 <p className="opacity-90">{t("Health Awareness & Community Unity", "आरोग्य आणि सामाजिक एकता")}</p>
               </div>
               <a 
-                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.5323782161554!2d73.30148027523684!3d18.523260382570747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be8197b5c94aabd%3A0xab4f9a0b4782d1e2!2sRamwadi!5e1!3m2!1sen!2sin!4v1771752454607!5m2!1sen!2si" 
+                href="google.com/maps?ll=18.52326,73.304034&z=16&t=h&hl=en&gl=IN&mapclient=embed&cid=12344254476880892386" 
                 target="_blank" 
                 className="mt-6 inline-flex items-center gap-3 bg-yellow-500 hover:bg-white hover:text-red-700 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg"
               >
