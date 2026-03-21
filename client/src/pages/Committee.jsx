@@ -1,6 +1,9 @@
 import React from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { motion } from "framer-motion";
+import MoruHalde from '../assets/MoruHalde.png';
+import GaneshHalde from '../assets/GaneshHalde.png';
+import RajuPatere from '../assets/RajuPatere.png';
 
 export default function Committee() {
   const { language } = useLanguage();
@@ -36,17 +39,17 @@ export default function Committee() {
     member: { mr: "सदस्य", en: "Member" }
   };
 
-  // Structured Data
+  // Structured Data with Photos
   const villageMembers = [
-    { name: "Moreshwar Gopal Halde", role: roles.president },
-    { name: "Dattaram Maruti Belose", role: roles.secretary },
-    { name: "Chandrakant Nathuram Warange", role: roles.treasurer },
+    { name: "Moreshwar Gopal Halde", role: roles.president, photo: MoruHalde },
+    { name: "Dattaram Maruti Belose", role: roles.secretary, photo: GaneshHalde },
+    { name: "Chandrakant Nathuram Warange", role: roles.treasurer, photo: RajuPatere },
   ];
 
   const cityMembers = [
-    { name: "Raju Patere", role: roles.president },
-    { name: "Ganesh Halde", role: roles.secretary },
-    { name: "Shashikant Warange", role: roles.treasurer },
+    { name: "Raju Patere", role: roles.president, photo: RajuPatere },
+    { name: "Ganesh Halde", role: roles.secretary, photo: GaneshHalde },
+    { name: "Shashikant Warange", role: roles.treasurer, photo: MoruHalde },
   ];
 
   return (
@@ -113,8 +116,12 @@ function MandalSection({ title, subName, members, lang }) {
             className="bg-white border-b-4 border-gray-100 p-8 rounded-2xl shadow-md flex flex-col items-center text-center w-full sm:w-72 group hover:border-yellow-500 transition-all"
           >
             {/* Avatar with Ring */}
-            <div className="w-24 h-24 rounded-full mb-4 flex items-center justify-center bg-gray-50 border-2 border-dashed border-gray-200 group-hover:border-yellow-500 group-hover:bg-yellow-50 transition-all">
-              <span className="text-4xl grayscale group-hover:grayscale-0 transition-all">👤</span>
+            <div className="w-24 h-24 rounded-full mb-4 flex items-center justify-center bg-gray-50 border-2 border-dashed border-gray-200 group-hover:border-yellow-500 group-hover:bg-yellow-50 transition-all overflow-hidden">
+              <img 
+                src={member.photo} 
+                alt={member.name} 
+                className="w-full h-full object-cover"
+              />
             </div>
             
             {/* Designation Badge */}

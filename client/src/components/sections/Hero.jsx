@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import RamPhoto from "../../assets/RamLaxmanSita.jpeg"
+import RamPhoto from "../../assets/RamLaxmanSita1.jpeg"
+import RamPhoto2 from '../../assets/RamLaxmanSita2.jpeg'
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -45,7 +46,7 @@ export default function Hero() {
           className="flex gap-4 w-full md:w-1/2 justify-center"
         >
           <div className="border-8 border-white p-1 shadow-[0_20px_50px_rgba(0,0,0,0.15)] w-1/2 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-            <img src={RamPhoto} alt="Deity 1" className="w-full h-auto object-cover" />
+            <img src={RamPhoto2} alt="Deity 1" className="w-full h-auto object-cover" />
           </div>
           <div className="border-8 border-white p-1 shadow-[0_20px_50px_rgba(0,0,0,0.15)] w-1/2 transform rotate-2 hover:rotate-0 transition-transform duration-500 mt-8">
             <img src={RamPhoto} alt="Deity 2" className="w-full h-auto object-cover" />

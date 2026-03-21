@@ -68,10 +68,7 @@ export default function Navbar() {
             <span className="text-3xl">☰</span>
           </button>
 
-          <div className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-2 py-1 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold animate-pulse shadow-sm">
-            <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rounded-full"></span>
-            {t.live}
-          </div>
+          
         </div>
 
         {/* Center: Desktop Links */}
@@ -91,7 +88,7 @@ export default function Navbar() {
         {/* Right: Admin & Language Toggle */}
         <div className="flex gap-2 md:gap-4 items-center">
           <Link
-            to="/admin"
+            to="/admin/login"
             className="bg-[#D32F2F] hover:bg-[#B71C1C] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-lg text-[10px] md:text-sm font-bold transition-all shadow-md active:scale-95"
           >
             {t.admin}

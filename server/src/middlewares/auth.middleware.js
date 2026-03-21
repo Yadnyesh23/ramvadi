@@ -1,5 +1,5 @@
 import AsyncHandler from '../utils/AsyncHandler.js'
-
+import jwt from 'jsonwebtoken'
 const verifyAdmin = AsyncHandler(
     async(req, res, next) => {
         const token = req.headers.authorization.split(" ")[1]

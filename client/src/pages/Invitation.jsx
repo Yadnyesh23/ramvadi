@@ -1,4 +1,4 @@
-import invitation from "../assets/temple.png"; // Replace with your actual card image
+import invitation from "../assets/invitation.png"; // Replace with your actual card image
 import { useLanguage } from "../context/LanguageContext";
 import { motion } from "framer-motion";
 
@@ -32,10 +32,10 @@ export default function Invitation() {
           {/* Traditional "Frame" Border */}
           <div className="p-3 md:p-6 bg-white shadow-2xl rounded-sm border-1px border-yellow-500/30 transform transition-transform duration-500 hover:scale-[1.01]">
             <img
-              src={invitation}
-              alt="Ram Navami Invitation"
-              className="w-full h-auto max-h-750px object-contain rounded-sm"
-            />
+  src={invitation}
+  alt="Ram Navami Invitation"
+  className="w-full max-w-md md:max-w-lg mx-auto h-auto object-contain rounded-sm"
+/>
             {/* Subtle inner gold hairline */}
             <div className="absolute inset-4 md:inset-8 border border-yellow-600/10 pointer-events-none"></div>
           </div>
@@ -75,16 +75,16 @@ export default function Invitation() {
 
           {/* WhatsApp Share Button */}
           <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="https://wa.me/?text=Join%20us%20for%20Ram%20Navami%20Celebration%20at%20Ramwadi!%20Check%20the%20invitation%20here:"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-center gap-3 mt-8 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_20px_rgba(37,211,102,0.3)] hover:opacity-90 transition-all"
-          >
-            <span>📱</span>
-            {language === "mr" ? "WhatsApp वर शेअर करा" : "Share on WhatsApp"}
-          </motion.a>
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  href={`https://wa.me/?text=Join%20us%20for%20Ram%20Navami%20Celebration%20at%20Ramwadi!%20Check%20the%20invitation%20here:%20${window.location.origin}/assets/invitation.png`}
+  target="_blank"
+  rel="noreferrer"
+  className="flex items-center justify-center gap-3 mt-8 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_20px_rgba(37,211,102,0.3)] hover:opacity-90 transition-all"
+>
+  <span>📱</span>
+  {language === "mr" ? "WhatsApp वर शेअर करा" : "Share on WhatsApp"}
+</motion.a>
         </div>
       </div>
     </section>

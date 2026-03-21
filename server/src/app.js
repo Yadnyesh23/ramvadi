@@ -13,9 +13,17 @@ app.use(express.json())
 
 import healthcheckroute from './routes/healthcheck.route.js'
 import adminloginroute from './routes/auth.route.js'
-import verifyAdmin from './middlewares/auth.middleware.js'
+import galleryRoutes from "./routes/gallery.routes.js";
+import errorHandler from "./middlewares/error.middleware.js"
+import eventRoutes from "./routes/event.routes.js";
+import adminRoutes from "./routes/admin.routes.js";
 
 app.use('/api', healthcheckroute)
 app.use('/api/admin',adminloginroute)
+app.use("/api/gallery", galleryRoutes);
+app.use("/api/events", eventRoutes);
+app.use("/api/admin", adminRoutes);
+
+app.use(errorHandler);
 
 export default app

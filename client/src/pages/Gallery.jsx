@@ -1,61 +1,65 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import API_BASE_URL from "../config/api";
 
 export default function Gallery() {
   const { language } = useLanguage();
-  const [year, setYear] = useState("2026");
+
+  const [galleryData, setGalleryData] = useState([]);
+  const [year, setYear] = useState(null);
 
   const t = (en, mr) => (language === "mr" ? mr : en);
 
-  const galleryData = {
-    2026: [
-      { type: "image", src: "/gallery/2026/ramnavmi1.jpg" },
-      { type: "image", src: "/gallery/2026/ramnavmi2.jpg" },
-      { type: "video", src: "/gallery/2026/video1.mp4" },
-    ],
-    2025: [
-      { type: "image", src: "/gallery/2025/img1.jpg" },
-      { type: "image", src: "/gallery/2025/img2.jpg" },
-    ],
-    2024: [
-      { type: "image", src: "/gallery/2024/img1.jpg" },
-    ],
-  };
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/gallery`);
+        const data = await res.json();
+        
+        if (data.success) {
+          // Flatten all media items with type and url
+          const allMedia = [];
+          data.data.forEach((item) => {
+            item.media.forEach((m) => {
+              allMedia.push({
+                type: m.resource_type === "video" ? "video" : "image",
+                src: m.url,
+                title: item.title,
+                description: item.description,
+                createdAt: item.createdAt,
+              });
+            });
+          });
+
+          setGalleryData(allMedia);
+        }
+      } catch (error) {
+        console.error("Failed to fetch gallery", error);
+      }
+    };
+
+    fetchGallery();
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#FFF9F1] text-[#333] px-6 py-12">
       
-      {/* Title Section - Matching Schedule Header */}
+      {/* Title Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-[#D32F2F] mb-2">
           {t("Festival Gallery", "उत्सव गॅलरी")}
         </h1>
+
         <div className="h-1.5 w-24 bg-[#FFC107] mx-auto mb-4 rounded-full"></div>
+
         <p className="text-gray-600 italic font-medium">
           {t("Ram Navmi Celebration Memories", "राम नवमी उत्सवाच्या आठवणी")}
         </p>
       </div>
 
-      {/* Year Selector - Matching Navigation Style */}
-      <div className="flex justify-center gap-4 mb-12">
-        {Object.keys(galleryData).sort((a, b) => b - a).map((y) => (
-          <button
-            key={y}
-            onClick={() => setYear(y)}
-            className={`px-6 py-2 rounded-lg font-bold border-2 transition-all duration-200 ${
-              year === y
-                ? "bg-[#D32F2F] border-[#D32F2F] text-white shadow-md"
-                : "bg-white border-gray-200 text-gray-600 hover:border-[#D32F2F] hover:text-[#D32F2F]"
-            }`}
-          >
-            {y}
-          </button>
-        ))}
-      </div>
-
-      {/* Gallery Grid - Card Style Matching Schedule Items */}
+      {/* Gallery Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {galleryData[year].map((item, index) => (
+        {galleryData.map((item, index) => (
           <div
             key={index}
             className="bg-white rounded-xl shadow-lg border-l-8 border-[#D32F2F] overflow-hidden hover:shadow-2xl transition-shadow duration-300"
@@ -65,7 +69,7 @@ export default function Gallery() {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={item.src}
-                    alt="festival"
+                    alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -78,15 +82,20 @@ export default function Gallery() {
                   />
                 </div>
               )}
-              
-              {/* Badge for Type */}
+
+              {/* Badge */}
               <div className="absolute top-3 right-3 bg-[#FFF3E0] text-[#E65100] px-3 py-1 rounded-full text-xs font-bold uppercase border border-[#FFE0B2]">
-                {item.type === "video" ? t("Video", "व्हिडिओ") : t("Photo", "फोटो")}
+                {item.type === "video"
+                  ? t("Video", "व्हिडिओ")
+                  : t("Photo", "फोटो")}
               </div>
             </div>
 
-            {/* Label Area */}
-            
+            {/* Title & Description */}
+            <div className="p-4">
+              <h3 className="font-bold text-lg">{item.title}</h3>
+              <p className="text-gray-600 text-sm">{item.description}</p>
+            </div>
           </div>
         ))}
       </div>

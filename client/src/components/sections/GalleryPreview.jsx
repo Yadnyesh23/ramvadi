@@ -1,26 +1,56 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
-
-import img1 from "../../assets/temple.png";
-import img2 from "../../assets/temple.png";
-import img3 from "../../assets/gav.png";
-import img4 from "../../assets/temple.png";
-import img5 from "../../assets/gav.png";
+import { useEffect, useState } from "react";
+import API_BASE_URL from "../../config/api";
 
 export default function GalleryPreview() {
   const { language } = useLanguage();
 
+  const [images, setImages] = useState([]);
+
   const title = language === "mr" ? "छायाचित्रे" : "Festival Gallery";
-  const subtitle = language === "mr" ? "मागील वर्षांची काही खास क्षणचित्रे" : "Glimpses of previous years";
+  const subtitle =
+    language === "mr"
+      ? "मागील वर्षांची काही खास क्षणचित्रे"
+      : "Glimpses of previous years";
+
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/gallery`);
+        const data = await res.json();
+
+        if (data.success) {
+          const galleries = data.data;
+
+          // collect all images
+          let imgs = [];
+
+          galleries.forEach((gallery) => {
+            gallery.media.forEach((item) => {
+              if (item.resource_type === "image") {
+                imgs.push(item.url);
+              }
+            });
+          });
+
+          setImages(imgs.slice(0, 5)); // only first 5 images
+        }
+      } catch (error) {
+        console.error("Failed to fetch gallery:", error);
+      }
+    };
+
+    fetchGallery();
+  }, []);
 
   return (
     <section className="bg-[#FFF9F2] py-20 px-6 relative overflow-hidden">
-      {/* Decorative Background Element (Optional - subtle mandala) */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#D32F2F]/5 rounded-full -mr-32 -mt-32"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section Header */}
+        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-[#D32F2F] font-bold text-4xl md:text-5xl mb-2">
             {title}
@@ -29,30 +59,40 @@ export default function GalleryPreview() {
           <p className="text-gray-600 font-medium italic">{subtitle}</p>
         </div>
 
-        {/* Bento Grid Gallery */}
-        <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-600px">
-          {/* Main Featured Image */}
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="col-span-2 row-span-2 relative group overflow-hidden border-8 border-white shadow-xl"
-          >
-            <img src={img1} alt="Gallery 1" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-            <div className="absolute inset-0 border-1px border-yellow-500/30 m-2"></div>
-          </motion.div>
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-[600px]">
+          {images.length > 0 && (
+            <>
+              {/* Main Image */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="col-span-2 row-span-2 relative group overflow-hidden border-8 border-white shadow-xl"
+              >
+                <img
+                  src={images[0]}
+                  alt="Gallery"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 border border-yellow-500/30 m-2"></div>
+              </motion.div>
 
-          {/* Side Images */}
-          <div className="col-span-2 grid grid-cols-2 gap-4">
-            <PhotoFrame src={img2} />
-            <PhotoFrame src={img3} />
-          </div>
-          
-          <div className="col-span-2 grid grid-cols-2 gap-4">
-            <PhotoFrame src={img4} />
-            <PhotoFrame src={img5} />
-          </div>
+              {/* Small Images */}
+              <div className="col-span-2 grid grid-cols-2 gap-4">
+                {images.slice(1, 3).map((img, i) => (
+                  <PhotoFrame key={i} src={img} />
+                ))}
+              </div>
+
+              <div className="col-span-2 grid grid-cols-2 gap-4">
+                {images.slice(3, 5).map((img, i) => (
+                  <PhotoFrame key={i} src={img} />
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
-        {/* Navigation Button */}
+        {/* Button */}
         <div className="text-center mt-16">
           <Link
             to="/gallery"
@@ -66,16 +106,18 @@ export default function GalleryPreview() {
   );
 }
 
-// Helper Component for "Framed" look
 function PhotoFrame({ src }) {
   return (
-    <motion.div 
+    <motion.div
       whileHover={{ y: -5 }}
       className="relative overflow-hidden border-4 border-white shadow-lg h-full group"
     >
-      <img src={src} alt="Gallery" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-      {/* Gold inner hairline border */}
-      <div className="absolute inset-0 border-1px border-yellow-600/20 m-1"></div>
+      <img
+        src={src}
+        alt="Gallery"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 border border-yellow-600/20 m-1"></div>
     </motion.div>
   );
 }

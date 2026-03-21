@@ -9,6 +9,11 @@ import Committee from "./pages/Committee";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import CreateEvent from "./pages/CreateEvent";
+import ManageEvents from "./pages/ManageEvents";
+import UploadGallery from "./pages/UploadGallery";
+import ManageGallery from "./pages/ManageGallery";
 
 function App() {
   return (
@@ -22,7 +27,12 @@ function App() {
           <Route path="/committee" element={<Committee />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/events/create" element={<CreateEvent />} />
+          <Route path="/admin/events/manage" element={<ManageEvents />} />
+          <Route path="/admin/gallery/upload" element={<UploadGallery />} />
+<Route path="/admin/gallery/manage" element={<ManageGallery />} />
         </Routes>
       </MainLayout>
   );

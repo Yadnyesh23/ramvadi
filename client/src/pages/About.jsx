@@ -44,7 +44,7 @@ export default function About() {
               <img
                 src={img1}
                 alt="Temple History"
-                className="w-full h-auto rounded-sm shadow-inner"
+                className="w-full max-h-110 rounded-sm shadow-inner object-cover"
               />
               <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#D32F2F]"></div>
             </div>
@@ -248,9 +248,9 @@ const festivals = [
   { en: "Sita Navami", mr: "सीता नवमी" },
   { en: "Hanuman Jayanti", mr: "हनुमान जयंती" },
   { en: "Gokul Ashtami", mr: "गोकुळ अष्टमी" },
+  { en: "Ganesh Utsav", mr: "गणेशोत्सव" },
   { en: "Religious Processions", mr: "धार्मिक मिरवणूक" },
   { en: "Devotional Programs", mr: "भक्ती कार्यक्रम" },
-  { en: "Community Prayer", mr: "सामुदायिक प्रार्थना" },
 ];
 
 const socialService = [

@@ -10,7 +10,7 @@ export default function Footer() {
         
         {/* Mandal Info */}
         <div>
-          <h3 className="font-devnagari text-xl text-gold mb-3">
+          <h3 className="font-devnagari text-xl text-gold mb-3 text-gray-400">
             {language === "mr"
               ? "रामवाडी रामनवमी"
               : "Ramwadi Ram Navami"}
@@ -24,7 +24,7 @@ export default function Footer() {
 
         {/* Navigation */}
         <div>
-          <h4 className="text-white mb-3">
+          <h4 className="text-gray-400 mb-3">
             {language === "mr" ? "लिंक्स" : "Links"}
           </h4>
           <div className="flex flex-col gap-2 text-gray-400">
@@ -38,7 +38,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-white mb-3">
+          <h4 className="text-gray-400 mb-3">
             {language === "mr" ? "संपर्क" : "Contact"}
           </h4>
           <p className="text-gray-400">

@@ -90,7 +90,7 @@ export default function Contact() {
                   <input
                     type="text"
                     placeholder={t("Enter your name", "तुमचे नाव टाका")}
-                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all"
+                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all text-black"
                   />
                 </div>
                 <div className="space-y-2">
@@ -98,7 +98,7 @@ export default function Contact() {
                   <input
                     type="email"
                     placeholder="example@gmail.com"
-                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all"
+                    className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all text-black"
                   />
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function Contact() {
                 <textarea
                   placeholder={t("How can we help you?", "आम्ही तुम्हाला कशी मदत करू शकतो?")}
                   rows="5"
-                  className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all resize-none text-black"
                 />
               </div>
 
