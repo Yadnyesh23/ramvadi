@@ -14,7 +14,7 @@ export default function Navbar() {
       events: "कार्यक्रम",
       gallery: "छायाचित्रे",
       invitation: "निमंत्रण",
-      committee: "समिती",
+      committee: "कार्यकारी मंडळ",
       about: "आमच्याबद्दल",
       contact: "संपर्क",
       admin: "प्रशासन",
