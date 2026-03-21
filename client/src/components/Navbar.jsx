@@ -9,7 +9,7 @@ export default function Navbar() {
 
   const navText = {
     mr: {
-      title: "श्री राम सामाजिक विकास मंडळ, रामवाडी",
+      title: "श्रीराम सेवा सामाजिक विकास मंडळ, रामवाडी",
       home: "मुख्यपृष्ठ",
       events: "कार्यक्रम",
       gallery: "छायाचित्रे",
@@ -22,7 +22,7 @@ export default function Navbar() {
       live: "थेट",
     },
     en: {
-      title: "Shree Ram Samajik Vikas Mandal, Ramwadi",
+      title: "Shree Ram Seva Samajik Vikas Mandal, Ramwadi",
       home: "Home",
       events: "Events",
       gallery: "Gallery",
