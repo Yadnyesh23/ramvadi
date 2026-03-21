@@ -176,9 +176,9 @@ export default function About() {
               <div className="flex gap-4 items-start">
                 <span className="text-2xl">📍</span>
                 <p className="text-lg opacity-90 leading-relaxed font-light">
-                  Ramwadi, Pachchapur,
+                  श्रीक्षेत्र रामवाडी-पाच्छापूर
                   <br />
-                  Maharashtra 412108, India
+                  तालुका-सुधागड
                   <br />
                   <span className="font-bold text-yellow-400">
                     ({t("Near Sudhagad Fort", "सुधागड किल्ल्याजवळ")})

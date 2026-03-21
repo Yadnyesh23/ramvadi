@@ -10,22 +10,18 @@ export default function Committee() {
 
   const content = {
     mr: {
-      hero: "कार्यकारिणी समिती",
+      hero: "कार्यकारी मंडळ",
       sub: "धर्मासाठी आणि समाजासाठी समर्पित आमची कार्यकारिणी",
       intro: "आमची संस्था दोन मुख्य मंडळांद्वारे कार्य करते जी परंपरा जपण्यासाठी आणि सामाजिक कार्यासाठी एकत्र येतात.",
-      villageTitle: "ग्रामस्थ मंडळ — रामवाडी",
-      villageName: "रामवाडी ग्रामस्थ मंडळ",
-      cityTitle: "शहर मंडळ",
-      cityName: "श्री राम सेवा मंडळ",
+      villageName: "रामवाडी ग्रामस्थ मंडळ, रामवाडी",
+      cityName: "श्रीराम सेवा सामाजिक विकास मंडळ, रामवाडी",
     },
     en: {
       hero: "Committee",
       sub: "Our Dedicated Committees Working for Dharma & Community",
       intro: "Our organization functions through two main mandals that work together to preserve traditions and serve society.",
-      villageTitle: "Village Mandal — Ramwadi",
-      villageName: "Ramwadi Gramasth Mandal",
-      cityTitle: "City Mandal",
-      cityName: "Shree Ram Seva Mandal",
+      villageName: "Ramwadi Gramasth Mandal, Ramvadi",
+      cityName: "Shree Ram Seva Samajik Vikas Mandal, Ramvadi",
     }
   };
 
