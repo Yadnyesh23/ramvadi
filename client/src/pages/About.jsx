@@ -185,15 +185,6 @@ export default function About() {
                   </span>
                 </p>
               </div>
-              <div className="flex gap-4 items-center">
-                <span className="text-2xl">🏥</span>
-                <p className="opacity-90">
-                  {t(
-                    "Health Awareness & Community Unity",
-                    "आरोग्य आणि सामाजिक एकता",
-                  )}
-                </p>
-              </div>
               <button
   onClick={() =>
     window.open(
