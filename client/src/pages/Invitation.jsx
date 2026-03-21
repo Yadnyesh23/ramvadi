@@ -77,7 +77,7 @@ export default function Invitation() {
           <motion.a
   whileHover={{ scale: 1.05 }}
   whileTap={{ scale: 0.95 }}
-  href={`https://wa.me/?text=Join%20us%20for%20Ram%20Navami%20Celebration%20at%20Ramwadi!%20Check%20the%20invitation%20here:%20${window.location.origin}/assets/invitation.png`}
+  href={`https://ramvadi.vercel.app/invitation`}
   target="_blank"
   rel="noreferrer"
   className="flex items-center justify-center gap-3 mt-8 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_20px_rgba(37,211,102,0.3)] hover:opacity-90 transition-all"
