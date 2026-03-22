@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import RamPhoto from "../../assets/RamLaxmanSita1.jpeg"
-import RamPhoto2 from '../../assets/RamLaxmanSita2.jpeg'
+import RamPhoto from "../../assets/Ram.png"
+import RamPhoto2 from '../../assets/RamLaxmanSita1.png'
 
 export default function Hero() {
   const { language } = useLanguage();
