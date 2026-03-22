@@ -49,7 +49,7 @@ export default function Contact() {
                 <ContactItem 
                   icon={<MapPin className="text-red-600" />} 
                   label={t("Location", "स्थान")} 
-                  content="Ramwadi, Near Sudhagad Fort, Raigad, Maharashtra 412108" 
+                  content="श्रीक्षेत्र रामवाडी-पाच्छापूर, तालुका-सुधागड" 
                 />
                 <ContactItem 
                   icon={<Phone className="text-green-600" />} 
