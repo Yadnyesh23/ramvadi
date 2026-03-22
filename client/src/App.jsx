@@ -14,6 +14,7 @@ import CreateEvent from "./pages/CreateEvent";
 import ManageEvents from "./pages/ManageEvents";
 import UploadGallery from "./pages/UploadGallery";
 import ManageGallery from "./pages/ManageGallery";
+import Donation from "./pages/Donation"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/committee" element={<Committee />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/donation" element={<Donation />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/events/create" element={<CreateEvent />} />

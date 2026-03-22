@@ -17,6 +17,7 @@ export default function Navbar() {
       committee: "कार्यकारी मंडळ",
       about: "आमच्याबद्दल",
       contact: "संपर्क",
+      donation: "देणगी",
       admin: "प्रशासन",
       toggle: "EN",
       live: "थेट",
@@ -30,6 +31,7 @@ export default function Navbar() {
       committee: "Committee",
       about: "About Us",
       contact: "Contact",
+      donation: "Donation",
       admin: "Admin",
       toggle: "मराठी",
       live: "LIVE",
@@ -45,6 +47,7 @@ export default function Navbar() {
     { path: "/gallery", label: t.gallery },
     { path: "/committee", label: t.committee },
     { path: "/contact", label: t.contact },
+    { path: "/donation", label: t.donation,  },
   ];
 
   return (

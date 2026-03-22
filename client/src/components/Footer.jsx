@@ -33,6 +33,7 @@ export default function Footer() {
             <Link to="/gallery">Gallery</Link>
             <Link to="/committee">Committee</Link>
             <Link to="/contact">Contact</Link>
+            <Link to="/donation">Donation</Link>
           </div>
         </div>
 
@@ -48,6 +49,9 @@ export default function Footer() {
           </p>
           <p className="text-gray-400 mt-2">
             Email: ramwadi@gmail.com
+          </p>
+          <p className="text-gray-400 mt-2">
+            UPI-ID: boim-006869337624@boi
           </p>
         </div>
       </div>
