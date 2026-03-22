@@ -6,6 +6,7 @@ import GaneshHalde from '../assets/GaneshHalde.png';
 import RajuPatere from '../assets/RajuPatere.png';
 import ChandrakantWarange from '../assets/ChandrakantWarange.jpeg';
 import DattaramBelose from '../assets/DattaramBelose.jpeg';
+import Sashikant from '../assets/Sashikant.jpeg';
 
 export default function Committee() {
   const { language } = useLanguage();
