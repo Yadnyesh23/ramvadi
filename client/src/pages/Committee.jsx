@@ -5,6 +5,7 @@ import MoruHalde from '../assets/MoruHalde.png';
 import GaneshHalde from '../assets/GaneshHalde.png';
 import RajuPatere from '../assets/RajuPatere.png';
 import ChandrakantWarange from '../assets/ChandrakantWarange.jpeg';
+import DattaramBelose from '../assets/ChandrakantWarange.jpeg';
 
 export default function Committee() {
   const { language } = useLanguage();
@@ -39,7 +40,7 @@ export default function Committee() {
   // Structured Data with Photos
   const villageMembers = [
     { name: "Moreshwar Gopal Halde", role: roles.president, photo: MoruHalde },
-    { name: "Dattaram Maruti Belose", role: roles.secretary, photo: GaneshHalde },
+    { name: "Dattaram Maruti Belose", role: roles.secretary, photo: DattaramBelose },
     { name: "Chandrakant Nathuram Warange", role: roles.treasurer, photo: ChandrakantWarange },
   ];
 
