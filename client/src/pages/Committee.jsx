@@ -48,7 +48,7 @@ export default function Committee() {
   const cityMembers = [
     { name: "Raju Patere", role: roles.president, photo: RajuPatere },
     { name: "Ganesh Halde", role: roles.secretary, photo: GaneshHalde },
-    { name: "Shashikant Warange", role: roles.treasurer, photo: MoruHalde },
+    { name: "Shashikant Warange", role: roles.treasurer, photo: Sashikant },
   ];
 
   return (
